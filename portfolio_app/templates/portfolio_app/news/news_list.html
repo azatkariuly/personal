@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'portfolio_app/base.html' %}
+{% block body_block %}
+
+	{% for news in news_list %}
+        <h2><a href="{% url 'news_detail' news.id %}" class="news_href">{{news}}</a></h2>
+        {{news.create_date|date:'d M Y'}}
+        <p>{{news.text}}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}
